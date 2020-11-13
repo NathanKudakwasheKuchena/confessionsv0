@@ -1,0 +1,847 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333333;
+  font-family: 'Monda', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+    color: #396684;
+}
+
+/* Container */
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+/* Header */
+
+.header {
+  background: #43799c;
+  color: white;
+  padding: 1.6rem 0;
+  letter-spacing: 0.5vmin;
+}
+
+.header__title {
+  font-size: 3.2rem;
+  margin-bottom: .4rem;
+}
+
+.header__subtitle {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+/* Actions Bar */
+
+.actions {
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #dedfe0;
+    padding: .8rem
+}
+
+.actions__container {
+    align-items: center;
+    display: flex;
+    max-width: 60rem;
+    margin: 0 auto;
+    min-height: 3rem;
+    padding: 1.5rem 1.6rem;
+}
+
+.actions__container--spaced {
+    justify-content: space-between
+}
+
+/* Form Inputs */
+
+.input {
+    border: 1px solid #DEDFE0;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .4rem .8rem;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+.dropdown {
+    border-radius: 0;
+    border: 1px solid #DEDFE0;
+    background: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+#create-post-button {
+    text-decoration: none;
+    background: #43799c;
+    border-style: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 1.8rem 5.3rem;
+    transition: 0.02s;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+#create-post-button:hover {
+    background: #243c8a;
+}
+
+#submit{
+    padding: 10px;
+    width: 100%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    font-size: 3vmin;
+    background-color: #43799c;
+    color: white;
+    border-style: none;
+    letter-spacing: 0.6vmin;
+    border-radius: 5px;
+}
+
+#submit:hover{
+    background-color: #243c8a;
+    cursor: pointer;
+    
+}
+
+
+/* Note editor */
+
+.name-input {
+    border: 1px solid #DEDFE0;
+    font-size: 2rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    padding: .8rem;
+    width: 100%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+.body-input {
+    border: 1px solid #DEDFE0;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    min-height: 15rem;
+    padding: .8rem;
+    width: 100%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+#post-card{
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 55%;
+    position: relative;
+    left: 22.3%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.6vmin;
+    margin: 10vmin;
+    padding: 2vmin 5vmin;
+    line-height: 5vh;
+    transition: 0.2s;
+    border: solid black 1px;
+    border-radius: 8px;
+}
+
+#date-time{
+    height: 9vh;
+}
+
+#comment-id{
+    font-size: 2.7vmin;
+    font-weight: 400;
+}
+
+.comment{
+    font-size: 2vmin;
+    font-weight: 900;
+}
+
+#posts-section{
+    width: 100%;
+}
+
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    left: 5%; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(31, 61, 160); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+  #post-card-single{
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 55%;
+    position: relative;
+    left: 22.3%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.6vmin;
+    margin: 10vmin;
+    padding: 5vmin 15vmin;
+    line-height: 5vh;
+    transition: 0.2s;
+    border: solid black 1px;
+    border-radius: 8px;
+  }
+
+
+  #form-section{
+      width: 30%;
+      position: relative;
+      left: 27%;
+      border: solid rgb(22, 77, 102) 3px;
+      padding: 30px;
+      border-radius: 7px;
+  }
+
+
+  #comment-name {
+    border: 1px solid #DEDFE0;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .4rem .8rem;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+#comment-body {
+    border: 1px solid #DEDFE0;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .4rem .8rem;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+
+#comment-submit{
+    padding: 5px;
+    width: 100%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    font-size: 2vmin;
+    background-color: #43799c;
+    color: white;
+    border-style: none;
+    letter-spacing: 0.6vmin;
+    border-radius: 5px;
+}
+
+#comment-submit:hover{
+    background-color: #243c8a;
+    cursor: pointer;
+    
+}
+
+
+.comment-body-input {
+    border: 1px solid #DEDFE0;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    min-height: 15rem;
+    padding: .4rem;
+    width: 100%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+}
+
+#comments-section{
+    width: 55%;
+    position: relative;
+    left: 10%;
+}
+
+li{
+    list-style: none;
+}
+
+#comment-card-single{
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 55%;
+    position: relative;
+    left: 22.3%;
+    font-family: 'Monda', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.2vmin;
+    margin: 10vmin;
+    padding: 2vmin 2vmin;
+    line-height: auto;
+    transition: 0.2s;
+    border: solid black 1px;
+    border-radius: 8px;
+  }
+
+
+  #main-section-single-post{
+      background-color: white;
+      padding-top: 5px;
+      padding-bottom: 10px;
+  }
+
+  #read-comments-button{
+    width: 50%;
+    letter-spacing: 0.6vmin;
+    position: relative;
+    background-color: #43799c;
+    color: white;
+    padding: 2vmin 12vmin;
+    font-size: 2vmin;
+    border-style: none;
+    transition: 0.05s;
+    border-radius: 14px;
+}
+
+#read-comments-button:hover{
+    background-color: #243c8a;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:299px){
+
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        left: 3%; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: rgb(31, 61, 160); /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 13px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 2.4vmin; /* Increase font size */
+      }
+      
+      #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+      }
+
+
+    #form-section{
+        width: 60%;
+        position: relative;
+        left: 30%;
+    }
+
+    #post-card{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 65%;
+        position: relative;
+        left: 14.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.6vmin;
+        margin: 10vmin;
+        padding: 2vmin 2vmin;
+        line-height: auto;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+        font-size: 3.5vmin;
+    }
+    
+    #date-time{
+        height: 9vh;
+    }
+    
+    #comment-id{
+        font-size: 2.7vmin;
+        font-weight: 400;
+    }
+    
+    .comment{
+        font-size: 2vmin;
+        font-weight: 900;
+    }
+    
+    #posts-section{
+        width: 100%;
+    }
+
+
+    #read-comments-button{
+        width: 80%;
+        letter-spacing: 0.6vmin;
+        position: relative;
+        background-color: #43799c;
+        color: white;
+        padding: 2vmin 12vmin;
+        font-size: 3vmin;
+        border-style: none;
+        transition: 0.05s;
+        border-radius: 14px;
+    }
+    
+    #read-comments-button:hover{
+        background-color: #243c8a;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+
+
+@media(max-width:500px){
+
+
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        left: 3%; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: rgb(31, 61, 160); /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 14px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 2.4vmin; /* Increase font size */
+      }
+      
+      #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+      }
+
+
+    #form-section{
+        width: 60%;
+        position: relative;
+        left: 30%;
+    }
+
+    #post-card{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 65%;
+        position: relative;
+        left: 16.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.6vmin;
+        margin: 10vmin;
+        padding: 2vmin 2vmin;
+        line-height: auto;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+    }
+    
+    #date-time{
+        height: 9vh;
+    }
+    
+    #comment-id{
+        font-size: 2.7vmin;
+        font-weight: 400;
+    }
+    
+    .comment{
+        font-size: 2vmin;
+        font-weight: 900;
+    }
+    
+    #posts-section{
+        width: 100%;
+    }
+
+
+    #read-comments-button{
+        width: 80%;
+        letter-spacing: 0.6vmin;
+        position: relative;
+        background-color: #43799c;
+        color: white;
+        padding: 2vmin 12vmin;
+        font-size: 3vmin;
+        border-style: none;
+        transition: 0.05s;
+        border-radius: 14px;
+    }
+    
+    #read-comments-button:hover{
+        background-color: #243c8a;
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+    #post-card-single{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 75%;
+        position: relative;
+        left: 7.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.6vmin;
+        margin: 10vmin;
+        padding: 2vmin 2vmin;
+        line-height: 5vh;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+      }
+    
+    
+      #form-section{
+          width: 76%;
+          position: relative;
+          left: 17%;
+          border: solid rgb(22, 77, 102) 3px;
+          padding: 30px;
+      }
+    
+    
+      #comment-name {
+        border: 1px solid #DEDFE0;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: 3rem;
+        margin-right: .8rem;
+        padding: .4rem .8rem;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    #comment-body {
+        border: 1px solid #DEDFE0;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: 3rem;
+        margin-right: .8rem;
+        padding: .4rem .8rem;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    
+    #comment-submit{
+        padding: 5px;
+        width: 100%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        font-size: 2vmin;
+        background-color: #43799c;
+        color: white;
+        border-style: none;
+        letter-spacing: 0.6vmin;
+    }
+    
+    #comment-submit:hover{
+        background-color: #243c8a;
+        cursor: pointer;
+        
+    }
+    
+    
+    .comment-body-input {
+        border: 1px solid #DEDFE0;
+        font-family: inherit;
+        font-size: 1.6rem;
+        font-weight: 300;
+        display: block;
+        margin: 2.4rem 0;
+        min-height: 15rem;
+        padding: .4rem;
+        width: 100%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    #comments-section{
+        width: 55%;
+        position: relative;
+        left: 10%;
+    }
+    
+    li{
+        list-style: none;
+    }
+    
+    #comment-card-single{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 100%;
+        position: relative;
+        left: 10.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.2vmin;
+        margin: 10vmin;
+        padding: 1vmin 1vmin;
+        line-height: auto;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+      }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1025px) and (min-width: 501px){
+    #post-card{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 75%;
+        position: relative;
+        left: 8%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.6vmin;
+        margin: 10vmin;
+        padding: 2vmin 2vmin;
+        line-height: auto;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+    }
+    
+    #date-time{
+        height: 9vh;
+    }
+    
+    #comment-id{
+        font-size: 2.7vmin;
+        font-weight: 400;
+    }
+    
+    .comment{
+        font-size: 2vmin;
+        font-weight: 900;
+    }
+    
+    #posts-section{
+        width: 100%;
+    }
+
+
+    #read-comments-button{
+        width: 80%;
+        letter-spacing: 0.6vmin;
+        position: relative;
+        background-color: #43799c;
+        color: white;
+        padding: 2vmin 12vmin;
+        font-size: 2.5vmin;
+        border-style: none;
+        transition: 0.05s;
+        border-radius: 14px;
+    }
+    
+    #read-comments-button:hover{
+        background-color: #243c8a;
+        color: white;
+        cursor: pointer;
+    }
+
+    #create-post-button {
+        text-decoration: none;
+        background: #43799c;
+        border-style: none;
+        color: white;
+        font-size: 2vmin;
+        font-weight: 300;
+        padding: 1.8rem 5.3rem;
+        transition: 0.02s;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        margin-bottom: 1rem;
+    }
+    
+    #create-post-button:hover {
+        background: #243c8a;
+    }
+
+
+
+
+    #post-card-single{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 75%;
+        position: relative;
+        left: 7.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.6vmin;
+        margin: 10vmin;
+        padding: 2vmin 2vmin;
+        line-height: 5vh;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+      }
+    
+    
+      #form-section{
+          width: 76%;
+          position: relative;
+          left: 17%;
+          border: solid rgb(22, 77, 102) 3px;
+          padding: 30px;
+      }
+    
+    
+      #comment-name {
+        border: 1px solid #DEDFE0;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: 3rem;
+        margin-right: .8rem;
+        padding: .4rem .8rem;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    #comment-body {
+        border: 1px solid #DEDFE0;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: 3rem;
+        margin-right: .8rem;
+        padding: .4rem .8rem;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    
+    #comment-submit{
+        padding: 5px;
+        width: 100%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        font-size: 2vmin;
+        background-color: #43799c;
+        color: white;
+        border-style: none;
+        letter-spacing: 0.6vmin;
+    }
+    
+    #comment-submit:hover{
+        background-color: #243c8a;
+        cursor: pointer;
+        
+    }
+    
+    
+    .comment-body-input {
+        border: 1px solid #DEDFE0;
+        font-family: inherit;
+        font-size: 1.6rem;
+        font-weight: 300;
+        display: block;
+        margin: 2.4rem 0;
+        min-height: 15rem;
+        padding: .4rem;
+        width: 100%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+    }
+    
+    #comments-section{
+        width: 55%;
+        position: relative;
+        left: 10%;
+    }
+    
+    li{
+        list-style: none;
+    }
+    
+    #comment-card-single{
+        background-color: rgb(255, 255, 255);
+        color: rgb(8, 8, 8);
+        text-align: center;
+        overflow-wrap: break-word;
+        width: 100%;
+        position: relative;
+        left: 10.3%;
+        font-family: 'Monda', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.2vmin;
+        margin: 10vmin;
+        padding: 1vmin 1vmin;
+        line-height: auto;
+        transition: 0.2s;
+        border: solid black 1px;
+        border-radius: 8px;
+      }
+}

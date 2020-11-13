@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ALU Stories App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/img/favicon.png" rel="icon">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&family=Ubuntu:ital@0;1&display=swap" rel="stylesheet">
+
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GVYHWT5BF"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4GVYHWT5BF');
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">ALU Stories</h1>
+                <h2 class="header__subtitle">Say Something Anonymously</h2>
+            </div>
+        </header>
+        <div class="actions">
+            <div class="actions">
+                <div class="actions__container actions__container--spaced">
+                    <a href="/">Back To Home</a>
+                    <span id="last-edited"></span>
+                </div>
+        </div> 
+
+        <section id="main-section-single-post">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+           
+
+            <section id="posts-section">
+             <ul class="posts">
+                   <li class="post">
+                     <section id="post-card-single">
+                         <div id="tp">
+                             <p class="comment">Posted By: <%= post.name %></p>
+                             <br>
+                             
+                             <p id="comment-id"> <%= post.body %></p>
+                             <br>
+                             
+                             <div id="date-time">
+                                 <p class="comment">Posted: <%= post.created %></p>
+                             </div>
+                         </div>
+                     </section>
+                   </li>
+                 </ul>
+            </section>   
+     
+            <section id="form-section">
+             <form id="comment-form" action="/do-comment" method="POST">
+                 <input type="hidden" class="name-input" name="post_id" value="<%= post._id %>">
+                 <input id="comment-name" class="name-input" placeholder="Alias Name" name="name" required>
+                 <textarea id="comment-body" class="comment-body-input" placeholder="Leave a comment" name="comment" required></textarea>
+                 <input type="submit" value="Comment" id="comment-submit" />
+             </form> 
+            </section>
+            
+            <section id="comments-section">
+             <ul class="comments">
+                 <% if (post.comments){ %>
+                 <% for(let i=post.comments.length-1; i>=0; i--) {%>
+                   <li class="post">
+                     <section id="comment-card-single">
+                         <div id="tp">
+                             <p class="comment"><%= post.comments[i].name %></p>
+                             
+                             <p id="comment-id"> <%= post.comments[i].comment %></p>
+                         </div>
+                     </section>
+                   </li>
+                   <% } %>
+                   <% } %>
+                 </ul>
+            </section> 
+        </section>
+
+        <footer id="footer">
+            <div class="actions">
+                <div class="actions__container">
+                <p>Contact: <a href="mailto:varsitystories23@gmail.com">varsitystories23@gmail.com</a></p>
+                </div>
+            </div> 
+           </footer>
+       
+       
+    
+
+
+       <script>
+
+           //Get the button:
+           mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+
+
+
+
+            function reloadFunction(event)
+            {
+                event.preventDefault();
+            }
+
+       </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ALU Stories App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/img/favicon.png" rel="icon">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GVYHWT5BF"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4GVYHWT5BF');
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="header__title">ALU Stories</h1>
+                <h2 class="header__subtitle">Create a post</h2>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="actions__container actions__container--spaced">
+                <a href="/">Back To Home</a>
+                <span id="last-edited"></span>
+            </div>
+        </div>
+        <form class="container" action="/created-posts" method="POST" id="create-post-form">
+            <input id="note-title" class="name-input" placeholder="Alias Name" name="name" required>
+            <textarea id="note-body" class="body-input" placeholder="Enter post text" name="body" required></textarea>
+            <input type="submit" value="Post" id="submit" />
+        </form>
+    </body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer id="footer">
+        <div class="actions">
+            <div class="actions__container">
+            <p>Contact: <a href="mailto:varsitystories23@gmail.com">varsitystories23@gmail.com</a></p>
+            </div>
+        </div> 
+       </footer>
+</html>

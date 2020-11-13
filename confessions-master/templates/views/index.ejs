@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ALU Stories App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/img/favicon.png" rel="icon">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&family=Ubuntu:ital@0;1&display=swap" rel="stylesheet">
+
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GVYHWT5BF"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4GVYHWT5BF');
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">ALU Stories</h1>
+                <h2 class="header__subtitle">Say Something Anonymously</h2>
+            </div>
+        </header>
+        <div class="actions">
+            <div class="actions__container">
+                <p>All times are in GMT</p>
+                <!--<input id="search-text" type="text" class="input" placeholder="Filter Posts">-->
+                <!--<select id="filter-by" class="dropdown">
+                    <option value="byEdited">Sort by most popular</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetical">Sort alphabetically</option>
+                </select>-->
+            </div>
+        </div> 
+        <br>
+        <br>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <div class="container">
+            <a id="create-post-button" href="/create-post">Create Post</a>
+        </div>    
+
+       <section id="posts-section">
+        <ul class="posts">
+            <% for(let i=posts.length-1; i>=0; i--) {%>
+              <li class="post">
+                <section id="post-card">
+                    <div id="tp">
+                        <p class="comment">Posted By: <%= posts[i].name %></p>
+                        <br>
+                        
+                        <p id="comment-id"> <%= posts[i].body %></p>
+                        <br>
+                        
+                        <div id="date-time">
+                            <p class="comment">Posted: <%= posts[i].created %></p>
+                        </div>
+                        <br>
+                        <form action="created-posts/<%= posts[i]._id%>" class="inline" >
+                            <button class="float-left submit-button" id="read-comments-button">Comments</button>
+                        </form>
+                    </div>
+                    
+                   <!-- <div>
+                        <button id="like-button" onclick="updateLikes()">Like</button>
+                        <span id="likes-count">0</span>
+                    </div>-->
+                    <br>
+                </section>
+              </li>
+            <% } %>
+            </ul>
+       </section>   
+       <br>
+       <br>
+       
+       <footer id="footer">
+        <div class="actions">
+            <div class="actions__container">
+            <p>Contact: <a href="mailto:varsitystories23@gmail.com">varsitystories23@gmail.com</a></p>
+            </div>
+        </div> 
+       </footer>
+       
+       
+
+       <script>
+
+           //Get the button:
+           mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+
+
+       </script>
+    </body>
+</html>
